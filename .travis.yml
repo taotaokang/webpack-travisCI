@@ -1,0 +1,23 @@
+# 脚本语言
+language: node_js
+
+# sudo权限
+sudo: false
+
+# 开启缓存 缓存目录为node_modules
+cache:
+  apt: true
+  directories:
+    - node_modules
+
+# node 版本
+node_js: stable
+
+install:
+  - npm install -D
+  - cd ./test/smoke/template
+  - npm install -D
+
+# 脚本命令
+script:
+  npm test
